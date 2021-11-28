@@ -3,7 +3,8 @@ import os
 import random
 import urllib.parse
 from datetime import datetime
-from decouple import config
+from decouple import Config, RepositoryEnv
+config = Config(RepositoryEnv('config.cfg'))
 
 from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
@@ -28,7 +29,7 @@ def get_uri():
 
 
 psycopg_uri = get_uri()
-app = Flask(__name__)
+app = Flask('app')
 app.config['SQLALCHEMY_DATABASE_URI'] = psycopg_uri
 app.config['SECRET_KEY'] = config('SECRET_KEY')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config(
@@ -192,5 +193,4 @@ def login():
     return redirect(url_for('signuplogin'))
 
 
-if __name__ == '__main__':
-    app.run()
+app.run(host='0.0.0.0', port=8080)
