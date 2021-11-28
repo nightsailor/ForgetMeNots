@@ -1,53 +1,36 @@
-- Set up your cluster connection:
+# Forget Me Nots
 
-1. download the CA certificate to that directory:
-    ~~~
-    curl --create-dirs -o ~/.postgresql/root.crt -O https://cockroachlabs.cloud/clusters/<cluster-id>/cert
-    ~~~
+## Inspiration
+Mental health issues such as Alzheimer's have been a concern for many people. Because of the pandemic situation such as isolation and the lack for remote care, people find it more and more difficult to cope with mental issues and to find ways to prevent them. 
 
-2. Create a new file named .env and update the new file with the connection string provided:
-    ~~~
-    CONNECTION_STRING = postgresql://<username>:<password>@<serverless-host>:26257/defaultdb?sslmode=verify-full&sslrootcert='$HOME'/.postgresql/root.crt&options=--cluster=<cluster-name>-<tenant-id>
-    ~~~
+This points to the need to have a site that provides preventive care and assistance for people who have mental issues such as Alzheimer's disease. The site should provide remote assistance and tools to help patients with mental problems to cope with their issues.
 
-3. To enter SQL shell connected to the cluster:
-    ~~~
-    cockroach sql --url "<connection-string>"
-    ~~~
+With the above requirements in mind, we developed the "Forget Me Nots" site. We want to provide a platform that helps people detect Alzheimer early, avoid Alzheimer, and keep their memories. The site offers free virtual memory scanning, a chat bot that takes schedule time and reminds users of  appointments for the day, game for training and increasing brain functionality, a writing diary function for users to write and remember their memories, and playlists of songs that users can listen to uplift their moods and share with friends by sending messages. 
 
-<br />
+## What it does
+The site offers reminder function of schedules and appointments for users who have mental issues such as Alzheimer's disease, game to train the brain, a writing diary function for users to write and remember their memories, and Spotify playlists of songs that users can share with friends by sending phone messages. 
 
-- From the command line, execute the following:
+## How we built it
+- HTML
+- CSS
+- Python
+- Twilio
+- Spotify
+- Linode
+- Cockroach db
+- Google Cloud 
 
-1. create and then activate a virtual environment:
-    ~~~
-    virtualenv env
-    ~~~
+##Use of CockroachDB
+- We have used CockroachDB as a primary database because it is an easy-to-use, open-source and indestructible SQL database.
 
-    ~~~
-    source env/bin/activate
-    ~~~
+## Challenges we ran into
+Integrate everything and work in different timezone also Setting  up Twilio, Chat-bot, Website front-end, Website back-end
 
-2. Install the required modules to the virtual environment:
-    ~~~
-    pip3 install psycopg2-binary sqlalchemy sqlalchemy-cockroachdb python-decouple
-    ~~~
-    or
-    ~~~
-    pip install -r requirements.txt
-    ~~~
+## Accomplishments that we're proud of
+One of our biggest achievements was creating an app that helps people cope with stress, depression, and mental issues such as Alzheimer's diseases. We want to provide seniors and youths preventive care for Alzheimer's disease through games and music therapy. We was able to offer functions such as free virtual screening memory and feature for users to keep their memory through writing diary, playing games to train the brain, listening to happy songs to relax. 
 
-3. Initialize the database:
-    ~~~
-    cat dbinit.sql | cockroach sql --url "<connection-string>"
-    ~~~
+## What we learned
+Work more efficiently and handle different parts of the project. Keeping the deadline in mind and forming a path to finish the project within the allotted time period. Integrating various parts of the project which none of us were very experienced with. 
 
-4. Run the code:
-    ~~~
-    python3 main.py
-    ~~~
-
-5. Exit virtual environment:
-    ~~~
-    deactivate
-    ~~~
+## What's next for Forget Me Nots
+In addition to adding new games, we will also be adding languages so that we can help more people around the world
