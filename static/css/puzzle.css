@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&family=Playball&display=swap');
+body {
+    font-family: 'Playball', cursive;    margin:0;
+background-image: url(https://media.discordapp.net/attachments/897874425406423113/914106854651625512/Background.png?width=759&height=427);
+    background-repeat: no-repeat;
+background-size: cover;
+}
+
+h2{
+    font-weight:normal;
+    text-align:center;
+    font-family: 'Baloo 2', cursive;
+}
+h3{
+    font-weight:normal;
+    margin:3px 0px;
+    text-align:center;
+}

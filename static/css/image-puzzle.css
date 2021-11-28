@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+#collage hr{
+    border:none;
+    border-top:2px solid #f5f2f2;
+    height:1px;
+
+}
+
+#collage #playPanel {
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        padding:10px 0px;
+    margin: 10px auto;
+    max-width:800px;
+    width:95%;
+    border:8px outset #999;
+    -webkit-box-shadow: 5px 5px 15px rgba(82, 204, 1, 0.925);
+    -moz-box-shadow: 5px 5px 15px rgba(207, 20, 20, 0.952);
+}
+
+#collage #actualImageBox {
+    display: inline-block;
+    font-size:0.8em;
+    margin: 10px 10px;
+    vertical-align: top;
+    width:280px;
+    font-family: 'Baloo 2', cursive;
+    
+
+
+}
+
+#collage #stepBox, #collage #timeBox {
+    display:inline-block;
+    width:48%;
+    color: white;
+    border: tomato;
+    background-image: url(../images/yug.png);
+    
+}
+
+#collage #stepBox div {
+    
+    display:inline-block;
+    padding:1px 4px;
+    margin: 0px auto;
+    max-width:800px;
+    background-image: url(../images/Puzzlebg.png);
+
+}
+
+#collage img#actualImage{
+    border:2px solid #a46;
+    height:280px;
+    width:280px;
+}
+
+#collage #sortable {
+    border:2px solid #a46;
+    list-style-type: none;
+    display: inline-block;
+    margin: 10px;
+    padding: 0;
+    width: 400px;
+}
+
+    #collage #sortable li {
+        background-size: 400% 400%;
+        border: none;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 100px;
+        height: 100px;
+    }
+
+#collage button  {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border-radius: 76%;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#collage button  {
+
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

@@ -1,0 +1,289 @@
+{% extends 'index.html' %} {% block head %}
+<title>Home page</title>
+{% endblock %} {% block body %}
+<!-- search form  -->
+
+<div class="search-form">
+
+	<div id="close-search" class="fas fa-times"></div>
+
+	<form action="">
+		<input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box second" style="background: url( '{{ url_for('static', filename='images/home-bg-1.jpg') }}' ) no-repeat;">
+                    <div class="content">
+                        <h3>We Support You. Whenever. Wherever</h3>
+                        <a href="#about" class="btn">Let's Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box" style="background: url( {{ url_for('static', filename='images/home-bg-2.jpg') }} ) no-repeat;">
+                    <div class="content">
+                        <h3>Love your Parents.</h3>
+                        <p>“ We are so busy growing up, we often forget they are also growing old.”
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="box"  style="background: url( {{ url_for('static', filename='images/home-bg-3.jpg') }} ) no-repeat;">
+                    <div class="content">
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+
+</section>
+
+<!-- home section ends -->
+<!-- Chat bot  -->
+
+<script src="https://www.socialintents.com/api/socialintents.1.3.js#2c9fa6c37d30e6ed017d3b277bab0daf" async="async"></script>
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="{{ url_for('static', filename='images/about-img.jpg') }}" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Our Mission</h3>
+        <p>We want to provide a platform that helps people to detect alzheimer early, avoid alzheimer, detect alzheimer signs early, and keep their memories
+        </p>
+        
+    </div>
+<!-- about section ends  -->
+
+</section>
+<!-- Services section starts  -->
+
+<section class="services">
+    <h1>Types Of Mental Disorders</h1>
+    <div class="container">
+        
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/dep.jpg') }}">
+            <div class="info">
+                <h3>Depression
+                </h3>
+                <p>It is characterized by sadness, loss of interest, guilt or low self-esteem, disturbed sleep or appetite, tiredness, and poor concentration. People with depression may also experience multiple physical complaints without an apparent cause. Long-term or recurrent depression can significantly impair people's ability to function at work or school and cope with daily life. Severe depression can even lead to suicide.
+
+                </p>
+              
+            </div>
+        </div>
+        
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/bi.jpg') }}">
+            <div class="info">
+                <h3>Bipolar disorder
+                </h3>
+                <p>A bipolar episode consists of both manic and depressive episodes separated by normal periods. Manic episodes are characterized by elevated moods, overactivity, rapid speech and inflated self-esteem, as well as a decreased need for sleep. Those who have manic episodes but no depressive episodes are also considered to have bipolar disorder.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/shizo.jpg') }}">
+            <div class="info">
+                <h3>Schizophrenia</h3>
+                <p>The symptoms of schizophrenia include distortions in thinking, perception, emotions, language, sense of self, and behavior. Psychotic experiences include hallucinations (hearing, seeing, or feeling things that aren't there) and delusions (fixed false beliefs or suspicions firmly held despite contrary evidence). It can make it difficult for people affected to work or study normally.Schizophrenia typically begins in late adolescence or early adulthood. Medications and psychosocial support are effective treatments.</p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/dimen.jpg') }}">
+            <div class="info">
+                <h3>Dementia
+                </h3>
+                <p> The disorder is usually chronic or progressive in nature and causes deterioration of cognitive function (i.e. the ability to process thoughts) beyond that which is expected from normal aging. Memory, thinking, orientation, comprehension, calculation, learning capacity, language, and judgement are all affected by it. Cognitive impairment is frequently accompanied, or may even precede, deterioration in emotional control, social behavior, or motivation.</p>
+            </div>
+            
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/alzi.jpg') }}">
+            <div class="info">
+                <h3>alzheimer
+                </h3>
+                <p> Alzheimer's disease is a progressive neurologic condition that causes the brain to shrink (atrophy) and its cells to die. Alzheimer's disease is the most common cause of dementia - a progressive decline in cognitive, behavioral, and social skills that affects a person's ability to function independently.
+
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/night.jpg') }}">
+            <div class="info">
+                <h3>Post-traumatic stress disorder
+                </h3>
+                <p> A recurring trauma: memories, nightmares, or flashbacks Feeling "numb" Avoiding certain people or places Intense emotions, such as anger, fear, or worry Trouble sleeping (insomnia)
+
+                </p>
+            </div>
+    </div>
+</section>
+
+<!-- about section ends -->
+<section class="category">
+    <h1 class="heading">Our Resources!</h1>
+    <div class="box-container">
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/puzzle.jpg') }}" alt="">
+            <h3>Puzzle Mainia</h3>
+            <a href="/puzzle" class="btn">Play Now</a>
+        </div>
+
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/diary.jpg') }}" alt="">
+            <h3>Diary- Memory Keeper</h3>
+            <a href="/journal" class="btn">Start Writting</a>
+        </div>
+
+        <div class="box">
+            <img src="{{ url_for('static', filename='images/music.jpg') }}" alt="">
+            <h3>Music For Mental Health</h3>
+            <a href="#song" class="btn">Scroll Down</a>
+        </div>
+    </div>
+</section>
+
+<section class="category">
+
+    <h1 id="song" class="heading">Music For Mental Health</h1>
+    <iframe src="https://open.spotify.com/embed/playlist/7rIJeDXSiJDkMkbERYIobm?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>   
+    
+    <h2>Share your playlist</h2>
+    <form class="row g-3">
+      <div>
+        <div class="col-md-12">
+            <span class="input-group-text" id="inputGroupPrepend2">
+              <h1>Enter Your Mobile Number</h1>
+            </span>
+            <input type="text" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+        </div>
+        
+        
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Share</button>
+        </div>
+      </div>
+    </form>
+    <!-- reviews section starts  -->
+
+<section class="reviews" id="reviews">
+
+    <h1 class="heading">Reviews</h1>
+
+    <div class="swiper review-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+                <p class="text">This sites help me train my memory through games and I enjoy the diary feature which I use daily to note down my favorite memory. I love theforgetmenots site since I always visit the site to read my notes when I feel down</p>
+                <div class="user">
+                    <img src="{{ url_for('static', filename='images/pic-1.png') }}" alt="">
+                    <div class="info">
+                        <h3>Hellen </h3>
+                        <span>CEO Sapixo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p class="text"> I often visit this site since it offers free virtual memory scan and offers useful tips to cope with mental health and avoid Alzheimer disease. I love the music section since I can listen to music and relax</p>
+                <div class="user">
+                    <img src="{{ url_for('static', filename='images/pic-2.png') }}" alt="">
+                    <div class="info">
+                        <h3>Rick Mort</h3>
+                        <span>Teacher</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide slide">
+                <p class="text">I love the sharing music feature and game in this site. The music is good for my brain, which I share with my friend through the site. The game is also good and I feel that my brain function becomes better after playing it</p>
+                <div class="user">
+                    <img src="{{ url_for('static', filename='images/pic-3.png') }}" alt="">
+                    <div class="info">
+                        <h3>Kat linn</h3>
+                        <span>Writter</span>
+                    </div>
+                </div>
+            </div>
+
+            
+    </div>
+
+  </div>
+
+</section>
+
+<!-- reviews section ends -->
+
+
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home">home</a>
+            <a href="#about">about</a>
+            <a href="#reviews">reviews</a>
+        </div>
+
+       
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#"> <i class="fas fa-phone"></i> +13862046129
+            </a>
+            <a href="#"> <i class="fas fa-envelope"></i> info@theforgetmenots.us </a>
+            <a href="#"> <i class="fas fa-map"></i> California Us </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+          </div>
+
+    </div>
+
+    <div class="credit">ⒸForgetMeNots</div>
+
+</section>
+
+<!-- footer section ends -->
+
+{%- for category, message in get_flashed_messages(with_categories=true) %}
+    <script>window.alert( '{{ message }}' )</script>
+{%- endfor %}
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+{% endblock %}

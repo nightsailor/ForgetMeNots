@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i,900,900i" type="text/css"
+	 media="all">
+
+	<title>Puzzle Game</title>
+	<link rel="shortcut icon" href="https://image.freepik.com/free-vector/puzzle-pieces-background-design_1270-35.jpg">
+
+	<link href="{{ url_for('static', filename='css/puzzle.css') }}" rel="stylesheet" />
+	<link href="{{ url_for('static', filename='css/image-puzzle.css') }}" rel="stylesheet" />
+	<script src="{{ url_for('static', filename='js/jquery-2.1.1.min.js') }}" src="js/jquery-2.1.1.min.js">
+	</script>
+	<script src="{{ url_for('static', filename='js/jquery-ui.js') }}">
+	</script>
+	<script src="{{ url_for('static', filename='js/image-puzzle.js') }}">
+	</script>
+</head>
+
+<body>
+	<div id="collage">
+		<h2>.</h2>
+		<hr/>
+
+			<div id="playPanel" style="padding:5px;display:none;">
+				<h3 id="imgTitle"></h3>
+				<hr />
+				<div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+					<ul id="sortable" class="sortable"></ul>
+					<div id="actualImageBox">
+						<div id="stepBox">
+							<div>Count:</div>
+							<div class="stepCount">0</div>
+						</div>
+						<div id="timeBox">
+							Time: <span id="timerPanel"></span> seconds
+                    </div>
+                    <img id="actualImage" />
+                    <div> <h3>Take a look at the picture and solve the puzzle
+                    </h3>.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medium</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Hard</label>
+						<input type="radio" name="level" id="veryhard" value="6" /> <label for="veryhard">Very Hard</label>
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Rules</button>
+                        <button id="newPhoto" type="button" class="btn">Next Picture</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">Game over !!</h2>
+                Congratulations!! <br /> You got the picture ready.
+                <br />
+                Time: <span class="stepCount">0</span> gear.
+                <br />
+                Time spent: <span class="timeCount">0</span> seconds<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play more</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: "{{ url_for('static', filename='images/Bird.jpg') }}", title: 'Bird' },
+                { src: "{{ url_for('static', filename='images/jorden.jpg') }}", title: 'Jordan: Petra' },
+                { src: "{{ url_for('static', filename='images/taj_mahal.jpg') }}", title: 'Taj Mahal in Agra' },
+                { src: "{{ url_for('static', filename='images/cat.jpg') }}", title: 'Cute Cat' },
+                { src: "{{ url_for('static', filename='images/octocat.jpg') }}", title: 'OctoCat' }
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Take a look at the picture and put the pieces where they belong .  . \n Each step is counted, so lets see who completes in less time');
+            }
+        </script>
+    </div>
+</body>
+</html>

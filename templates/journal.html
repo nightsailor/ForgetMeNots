@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/journal.css') }}" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q"
+	 crossorigin="anonymous" />
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"
+	/>
+	<title>Memory Keeper</title>
+	<link rel="shortcut icon" href="https://image.freepik.com/free-vector/book-pen-cartoon-icon-illustration-education-object-icon-concept-isolated-flat-cartoon-style_138676-2145.jpg">
+
+</head>
+
+<body>
+	<header>
+		<h1 class="title">My Personal Journal</h1>
+	</header>
+
+	<!-- Journal Entry Section -->
+	<section class="section journal-section">
+		<div class="container">
+			<div class="container-row container-row-journal">
+				<div class="container-item container-item-journal">
+					<form id="entryForm" action="{{ url_for('create_memory') }}" method=post>
+						<label for="entry-title" class="journal-label">Entry Title</label>
+              <input
+                type="text"
+                name=title
+                id="entry-title"
+                class="entry-text-title"
+                placeholder="Name of entry ✏️"
+              />
+              <label for="entry" class="journal-label">Today's Entry</label>
+              <textarea
+                name=text
+                id="entry"
+                class="entry-text-box"
+                placeholder="How was your day? 🤔"
+              ></textarea>
+              <button class="btn-main entry-submit-btn" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journal Entry Results -->
+    <section class="section sectionEntryResults" id="entryResultsSection">
+      <div class="container">
+        <div class="container-row entryResultRow"></div>
+      </div>
+    </section>
+    <script>
+      let memories = []
+      let memory = {}
+      {% for memory in memories  %}
+          memory = {
+            pub_date: '{{ memory.pub_date }}',
+            title: '{{ memory.title }}',
+            text: '{{ memory.text }}'
+          }
+          memories.push(memory)
+      {% endfor %}
+    </script>
+    <script src="{{ url_for('static', filename='js/journal.js') }}"></script>
+    {%- for category, message in get_flashed_messages(with_categories=true) %}
+        <script>window.alert( '{{ message }}' )</script>
+    {%- endfor %}
+  </body>
+</html>

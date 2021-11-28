@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block head %}
+<title>Memories</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/memories.css') }}"> {% endblock %} {% block body %}
+<div class="content">
+	<h1 style="text-align: center">All Dbs</h1>
+	{% if memories|length < 1 %} <h4 style="text-align: center">There are no memories. Create one below!</h4>
+		{% else %} {% for memory in memories %}
+		<!-- component -->
+		<div class="card max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+			<div class="flex justify-center md:justify-end -mt-16">
+				<img class="w-20 h-20 object-cover rounded-full border-2 border-indigo-500" src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
+      </div>
+      <div>
+        <h2 class="text-gray-800 text-3xl font-semibold">{{ memory.title }}</h2>
+        <p class="mt-2 text-gray-600">{{ memory.text }}</p>
+        <h1>{{ memory.pub_date }}</h1>
+      </div>
+      <div class="flex justify-end mt-4">
+        <a href="#" class="text-xl font-medium text-indigo-500">John Doe</a>
+        <form action="/delete-memory" method="POST">
+          <input type="hidden" name=id value={{ memory.id }}><br>
+          <input type="submit" value="Delete" class="text-xl font-medium text-indigo-500">
+        </form>
+      </div>
+    </div>
+        {% endfor %}
+    {% endif %}
+    <br>
+    <h1>Add memory</h1>
+    <div class="form">
+      <form action="/create-memory" method="POST">
+          <p>title:</p>
+          <input type="text" name=title>
+          <p>text:</p>
+          <input type="text" name=text>
+          <br>
+          <input type="submit" value="Add Task">
+      </form>
+</div>
+{% endblock %}

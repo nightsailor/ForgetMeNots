@@ -1,0 +1,11 @@
+.content{
+  /* display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column; */
+  width: 100%;
+}
+
+.card{
+  min-width: 30%;
+}
