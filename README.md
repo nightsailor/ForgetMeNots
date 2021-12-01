@@ -20,7 +20,7 @@ The site offers reminder function of schedules and appointments for users who ha
 - Cockroach db
 - Google Cloud 
 
-##Use of CockroachDB
+## Use of CockroachDB
 - We have used CockroachDB as a primary database because it is an easy-to-use, open-source and indestructible SQL database.
 
 ## Challenges we ran into
@@ -34,3 +34,7 @@ Work more efficiently and handle different parts of the project. Keeping the dea
 
 ## What's next for Forget Me Nots
 In addition to adding new games, we will also be adding languages so that we can help more people around the world
+
+## Try it here
+https://theforgetmenots.herokuapp.com/ 
+<Br>http://theforgetmenots.us/
